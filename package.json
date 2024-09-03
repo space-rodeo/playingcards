@@ -1,0 +1,20 @@
+{
+  "name": "playingcards",
+  "version": "1.0.0",
+  "description": "Library for creating games with playing cards",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "SpaceRodeo",
+  "license": "MIT",
+  "devDependencies": {
+    "fork-ts-checker-webpack-plugin": "^9.0.2",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.5.4"
+  }
+}
