@@ -1,0 +1,33 @@
+import Card from './card';
+export interface CardPileOptionsInterface {
+    x: number;
+    y: number;
+    rotation: number;
+}
+declare class CardPile {
+    protected cards: Array<Card>;
+    protected x: number;
+    protected y: number;
+    protected rotation: number;
+    private clickHandler;
+    constructor(options: CardPileOptionsInterface);
+    protected _getCardPosition(index: number, totalCards: number): number[];
+    private _moveCardsSync;
+    private _moveCards;
+    moveToSync(x: number, y: number): void;
+    moveTo(x: number, y: number): void;
+    addCardsSync(cardArray: Array<Card>): void;
+    addCards(cardArray: Array<Card>): Promise<void>;
+    private _removeCard;
+    removeCardSync(card: Card): void;
+    removeCard(card: Card): void;
+    private _shuffle;
+    shuffleSync(): void;
+    shuffle(): Promise<void>;
+    getTopCard(): Card;
+    onClick(handler: Function): void;
+    _getClickHandler(): Function;
+    show(): void;
+    hide(): void;
+}
+export default CardPile;
