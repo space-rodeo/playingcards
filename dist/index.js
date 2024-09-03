@@ -26,9 +26,10 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DECK_TYPE = exports.Hand = exports.GameDeck = exports.Deck = exports.CardPile = exports.Card = void 0;
-const card_1 = __importDefault(require("./card"));
+exports.SUIT = exports.DECK_TYPE = exports.Hand = exports.GameDeck = exports.Deck = exports.CardPile = exports.Card = void 0;
+const card_1 = __importStar(require("./card"));
 exports.Card = card_1.default;
+Object.defineProperty(exports, "SUIT", { enumerable: true, get: function () { return card_1.SUIT; } });
 const cardPile_1 = __importDefault(require("./cardPile"));
 exports.CardPile = cardPile_1.default;
 const deck_1 = __importStar(require("./deck"));

@@ -33,5 +33,7 @@ declare class Card {
     moveToSync(x: number, y: number, rotation: number): void;
     moveTo(x: number, y: number, rotation: number): Promise<void>;
     setZIndex(zIndex: number): void;
+    getSuit(): SUIT;
+    getRank(): Number;
 }
 export default Card;

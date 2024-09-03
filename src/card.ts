@@ -311,6 +311,14 @@ class Card {
     setZIndex(zIndex: number) {
         this.element.style.zIndex = zIndex.toString();
     }
+
+    getSuit() {
+        return this.suit;
+    }
+
+    getRank() {
+        return this.rank;
+    }
 }
 
 export default Card;

@@ -307,6 +307,12 @@ class Card {
     setZIndex(zIndex) {
         this.element.style.zIndex = zIndex.toString();
     }
+    getSuit() {
+        return this.suit;
+    }
+    getRank() {
+        return this.rank;
+    }
 }
 exports.default = Card;
 //# sourceMappingURL=card.js.map

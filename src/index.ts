@@ -1,4 +1,4 @@
-import Card from "./card";
+import Card, { SUIT } from "./card";
 import CardPile from "./cardPile";
 import Deck, { DECK_TYPE } from "./deck";
 import GameDeck from "./gameDeck";
@@ -10,5 +10,6 @@ export {
     Deck,
     GameDeck,
     Hand,
-    DECK_TYPE
+    DECK_TYPE,
+    SUIT
 };
