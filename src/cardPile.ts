@@ -68,33 +68,43 @@ class CardPile {
     }
 
     async addCards(cardArray: Array<Card>) {
+        const containers: Array<CardPile> = [];
         cardArray.forEach((card) => {
             if (card.getContainer()) {
-                card.getContainer().removeCard(card);
+                if (!containers.includes(card.getContainer())) {
+                    containers.push(card.getContainer());
+                }
+                card.getContainer()._removeCard(card);
             }
             this.cards.push(card);
             card.setContainer(this);
         });
-        await this._moveCards();
+        const promises: Array<Promise<void>> = [];
+        containers.forEach((container) => {
+            promises.push(container._moveCards());
+        });
+        promises.push(this._moveCards());
+        await Promise.all(promises);
     }
 
-    private _removeCard(card: Card, moveFunction: Function) {
+    private _removeCard(card: Card) {
         const index = this.cards.indexOf(card);
         if (index >= 0) {
             this.cards.splice(index, 1);
             card.removeFromContainer();
-            moveFunction();
         } else {
             throw new Error("Card not in pile");
         }
     }
 
     removeCardSync(card: Card) {
-        this._removeCard(card, () => this._moveCardsSync());
+        this._removeCard(card);
+        this._moveCardsSync();
     }
 
-    removeCard(card: Card) {
-        this._removeCard(card, () => this._moveCards());
+    async removeCard(card: Card) {
+        this._removeCard(card);
+        await this._moveCards();
     }
 
     private _shuffle() {
@@ -143,6 +153,16 @@ class CardPile {
         this.cards.forEach((card) => {
             card.hide();
         });
+    }
+
+    sortSync(sortingFunction: (a: Card, b: Card) => number) {
+        this.cards.sort(sortingFunction);
+        this._moveCardsSync();
+    }
+
+    async sort(sortingFunction: (a: Card, b: Card) => number) {
+        this.cards.sort(sortingFunction);
+        await this._moveCards();
     }
 }
 

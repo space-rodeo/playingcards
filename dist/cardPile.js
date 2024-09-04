@@ -61,32 +61,44 @@ class CardPile {
     }
     addCards(cardArray) {
         return __awaiter(this, void 0, void 0, function* () {
+            const containers = [];
             cardArray.forEach((card) => {
                 if (card.getContainer()) {
-                    card.getContainer().removeCard(card);
+                    if (!containers.includes(card.getContainer())) {
+                        containers.push(card.getContainer());
+                    }
+                    card.getContainer()._removeCard(card);
                 }
                 this.cards.push(card);
                 card.setContainer(this);
             });
-            yield this._moveCards();
+            const promises = [];
+            containers.forEach((container) => {
+                promises.push(container._moveCards());
+            });
+            promises.push(this._moveCards());
+            yield Promise.all(promises);
         });
     }
-    _removeCard(card, moveFunction) {
+    _removeCard(card) {
         const index = this.cards.indexOf(card);
         if (index >= 0) {
             this.cards.splice(index, 1);
             card.removeFromContainer();
-            moveFunction();
         }
         else {
             throw new Error("Card not in pile");
         }
     }
     removeCardSync(card) {
-        this._removeCard(card, () => this._moveCardsSync());
+        this._removeCard(card);
+        this._moveCardsSync();
     }
     removeCard(card) {
-        this._removeCard(card, () => this._moveCards());
+        return __awaiter(this, void 0, void 0, function* () {
+            this._removeCard(card);
+            yield this._moveCards();
+        });
     }
     _shuffle() {
         let i = this.cards.length;
@@ -129,6 +141,16 @@ class CardPile {
     hide() {
         this.cards.forEach((card) => {
             card.hide();
+        });
+    }
+    sortSync(sortingFunction) {
+        this.cards.sort(sortingFunction);
+        this._moveCardsSync();
+    }
+    sort(sortingFunction) {
+        return __awaiter(this, void 0, void 0, function* () {
+            this.cards.sort(sortingFunction);
+            yield this._moveCards();
         });
     }
 }

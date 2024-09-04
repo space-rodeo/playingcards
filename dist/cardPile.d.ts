@@ -20,7 +20,7 @@ declare class CardPile {
     addCards(cardArray: Array<Card>): Promise<void>;
     private _removeCard;
     removeCardSync(card: Card): void;
-    removeCard(card: Card): void;
+    removeCard(card: Card): Promise<void>;
     private _shuffle;
     shuffleSync(): void;
     shuffle(): Promise<void>;
@@ -29,5 +29,7 @@ declare class CardPile {
     _getClickHandler(): Function;
     show(): void;
     hide(): void;
+    sortSync(sortingFunction: (a: Card, b: Card) => number): void;
+    sort(sortingFunction: (a: Card, b: Card) => number): Promise<void>;
 }
 export default CardPile;
