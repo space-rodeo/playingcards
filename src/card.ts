@@ -69,7 +69,7 @@ export interface CardOptionsInterface {
     },
 };
 
-function getCardImage(suit: SUIT, rank: Number): string {
+function getCardImage(suit: SUIT, rank: number): string {
     if (suit === SUIT.CLUBS) {
         switch (rank) {
             case 14:
@@ -205,7 +205,7 @@ function onClickGenerator(card: Card) {
 
 class Card {
     private suit: SUIT;
-    private rank: Number;
+    private rank: number;
     private table: HTMLElement;
     private imageSource: string;
     private image: HTMLImageElement;
@@ -215,7 +215,7 @@ class Card {
     private animationId: NodeJS.Timeout;
     private rotation: number = 0;
 
-    constructor(suit: SUIT, rank: Number, table: HTMLElement, options?: CardOptionsInterface) {
+    constructor(suit: SUIT, rank: number, table: HTMLElement, options?: CardOptionsInterface) {
         this.suit = suit;
         this.rank = rank;
         this.table = table;

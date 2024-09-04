@@ -23,7 +23,7 @@ declare class Card {
     private animationSpeed;
     private animationId;
     private rotation;
-    constructor(suit: SUIT, rank: Number, table: HTMLElement, options?: CardOptionsInterface);
+    constructor(suit: SUIT, rank: number, table: HTMLElement, options?: CardOptionsInterface);
     toString(): string;
     show(): void;
     hide(): void;
@@ -34,6 +34,6 @@ declare class Card {
     moveTo(x: number, y: number, rotation: number): Promise<void>;
     setZIndex(zIndex: number): void;
     getSuit(): SUIT;
-    getRank(): Number;
+    getRank(): number;
 }
 export default Card;
