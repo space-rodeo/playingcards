@@ -48,11 +48,18 @@ class Deck {
             },
             animationSpeed: options.animationSpeed
         };
+        const cardConfigs = [];
         for (let i = start; i <= end; i++) {
-            this.all.push(new card_1.default(card_1.SUIT.HEARTS, i, this.table, cardOptions));
-            this.all.push(new card_1.default(card_1.SUIT.SPADES, i, this.table, cardOptions));
-            this.all.push(new card_1.default(card_1.SUIT.DIAMONDS, i, this.table, cardOptions));
-            this.all.push(new card_1.default(card_1.SUIT.CLUBS, i, this.table, cardOptions));
+            cardConfigs.push({ suit: card_1.SUIT.HEARTS, rank: i, element: this.table, cardOptions });
+            cardConfigs.push({ suit: card_1.SUIT.SPADES, rank: i, element: this.table, cardOptions });
+            cardConfigs.push({ suit: card_1.SUIT.DIAMONDS, rank: i, element: this.table, cardOptions });
+            cardConfigs.push({ suit: card_1.SUIT.CLUBS, rank: i, element: this.table, cardOptions });
+        }
+        while (cardConfigs.length) {
+            const i = Math.floor(Math.random() * cardConfigs.length);
+            const cardConfig = cardConfigs[i];
+            this.all.push(new card_1.default(cardConfig.suit, cardConfig.rank, cardConfig.element, cardConfig.cardOptions));
+            cardConfigs.splice(i, 1);
         }
     }
     getAllCards() {
