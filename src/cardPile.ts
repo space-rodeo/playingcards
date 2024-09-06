@@ -168,11 +168,14 @@ class CardPile {
     orderSync(order: Array<string>) {
         const newOrder: Array<Card> = [];
         order.forEach((cardName) => {
-            const newCard = this.cards.find((card) => { card.toString() === cardName });
+            const newCard = this.cards.find((card) => { return card.toString() === cardName });
             if (newCard) {
                 newOrder.push(newCard);
             }
         });
+        if (this.cards.length !== newOrder.length) {
+            throw new Error("Ordered cards does not have enough cards");
+        }
         this.cards = newOrder;
         this._moveCardsSync();
     }

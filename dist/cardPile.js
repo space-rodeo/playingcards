@@ -161,6 +161,9 @@ class CardPile {
                 newOrder.push(newCard);
             }
         });
+        if (this.cards.length !== newOrder.length) {
+            throw new Error("Ordered cards does not have enough cards");
+        }
         this.cards = newOrder;
         this._moveCardsSync();
     }
