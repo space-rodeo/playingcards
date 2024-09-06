@@ -153,6 +153,17 @@ class CardPile {
             yield this._moveCards();
         });
     }
+    orderSync(order) {
+        const newOrder = [];
+        order.forEach((cardName) => {
+            const newCard = this.cards.find((card) => { card.toString() === cardName; });
+            if (newCard) {
+                newOrder.push(newCard);
+            }
+        });
+        this.cards = newOrder;
+        this._moveCardsSync();
+    }
 }
 exports.default = CardPile;
 //# sourceMappingURL=cardPile.js.map

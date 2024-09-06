@@ -164,6 +164,18 @@ class CardPile {
         this.cards.sort(sortingFunction);
         await this._moveCards();
     }
+
+    orderSync(order: Array<string>) {
+        const newOrder: Array<Card> = [];
+        order.forEach((cardName) => {
+            const newCard = this.cards.find((card) => { card.toString() === cardName });
+            if (newCard) {
+                newOrder.push(newCard);
+            }
+        });
+        this.cards = newOrder;
+        this._moveCardsSync();
+    }
 }
 
 export default CardPile;

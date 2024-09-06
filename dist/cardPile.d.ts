@@ -31,5 +31,6 @@ declare class CardPile {
     hide(): void;
     sortSync(sortingFunction: (a: Card, b: Card) => number): void;
     sort(sortingFunction: (a: Card, b: Card) => number): Promise<void>;
+    orderSync(order: Array<string>): void;
 }
 export default CardPile;
