@@ -21,6 +21,7 @@ declare class CardPile {
     private _removeCard;
     removeCardSync(card: Card): void;
     removeCard(card: Card): Promise<void>;
+    getAllCards(): Card[];
     private _shuffle;
     shuffleSync(): void;
     shuffle(): Promise<void>;

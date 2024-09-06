@@ -107,6 +107,10 @@ class CardPile {
         await this._moveCards();
     }
 
+    getAllCards() {
+        return this.cards;
+    }
+
     private _shuffle() {
         let i = this.cards.length;
         if (!i) return;

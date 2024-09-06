@@ -100,6 +100,9 @@ class CardPile {
             yield this._moveCards();
         });
     }
+    getAllCards() {
+        return this.cards;
+    }
     _shuffle() {
         let i = this.cards.length;
         if (!i)
@@ -156,7 +159,7 @@ class CardPile {
     orderSync(order) {
         const newOrder = [];
         order.forEach((cardName) => {
-            const newCard = this.cards.find((card) => { card.toString() === cardName; });
+            const newCard = this.cards.find((card) => { return card.toString() === cardName; });
             if (newCard) {
                 newOrder.push(newCard);
             }
