@@ -1,9 +1,9 @@
 import CardPile from './cardPile';
 export declare enum SUIT {
-    HEARTS = "HEART",
-    SPADES = "SPADE",
-    DIAMONDS = "DIAMOND",
-    CLUBS = "CLUB"
+    HEARTS = "HEARTS",
+    SPADES = "SPADES",
+    DIAMONDS = "DIAMONDS",
+    CLUBS = "CLUBS"
 }
 export interface CardOptionsInterface {
     animationSpeed?: number;

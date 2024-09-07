@@ -55,10 +55,10 @@ import SPADE_KING from '../svg/SPADE-13-KING.svg';
 import CARD_BACK from '../svg/CARD_BACK.svg';
 
 export enum SUIT {
-    HEARTS = "HEART",
-    SPADES = "SPADE",
-    DIAMONDS = "DIAMOND",
-    CLUBS = "CLUB"
+    HEARTS = "HEARTS",
+    SPADES = "SPADES",
+    DIAMONDS = "DIAMONDS",
+    CLUBS = "CLUBS"
 };
 
 export interface CardOptionsInterface {

@@ -68,10 +68,10 @@ const SPADE_13_KING_svg_1 = __importDefault(require("../svg/SPADE-13-KING.svg"))
 const CARD_BACK_svg_1 = __importDefault(require("../svg/CARD_BACK.svg"));
 var SUIT;
 (function (SUIT) {
-    SUIT["HEARTS"] = "HEART";
-    SUIT["SPADES"] = "SPADE";
-    SUIT["DIAMONDS"] = "DIAMOND";
-    SUIT["CLUBS"] = "CLUB";
+    SUIT["HEARTS"] = "HEARTS";
+    SUIT["SPADES"] = "SPADES";
+    SUIT["DIAMONDS"] = "DIAMONDS";
+    SUIT["CLUBS"] = "CLUBS";
 })(SUIT || (exports.SUIT = SUIT = {}));
 ;
 ;
