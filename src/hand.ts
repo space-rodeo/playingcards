@@ -1,5 +1,5 @@
-import CardPile from "./cardPile";
-import { rotate } from "./math";
+import CardPile from './cardPile';
+import { rotate } from './math';
 
 export interface HandOptionsInterface {
     x: number,

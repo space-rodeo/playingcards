@@ -33,5 +33,6 @@ declare class CardPile {
     sortSync(sortingFunction: (a: Card, b: Card) => number): void;
     sort(sortingFunction: (a: Card, b: Card) => number): Promise<void>;
     orderSync(order: Array<string>): void;
+    getCardByName(name: string): Card;
 }
 export default CardPile;

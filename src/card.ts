@@ -55,10 +55,10 @@ import SPADE_KING from '../svg/SPADE-13-KING.svg';
 import CARD_BACK from '../svg/CARD_BACK.svg';
 
 export enum SUIT {
-    HEARTS = "HEARTS",
-    SPADES = "SPADES",
-    DIAMONDS = "DIAMONDS",
-    CLUBS = "CLUBS"
+    HEARTS = 'HEARTS',
+    SPADES = 'SPADES',
+    DIAMONDS = 'DIAMONDS',
+    CLUBS = 'CLUBS'
 };
 
 export interface CardOptionsInterface {
@@ -258,7 +258,7 @@ class Card {
 
     setContainer(cardPile: CardPile) {
         if (this.container) {
-            throw new Error("Card cannot be in two containers!");
+            throw new Error('Card cannot be in two containers!');
         } else {
             this.container = cardPile;
         }
@@ -301,7 +301,7 @@ class Card {
                     res();
                 } else if (frameCounter > totalFrames) {
                     clearInterval(this.animationId);
-                    rej(new Error("Animation interval exceeded"));
+                    rej(new Error('Animation interval exceeded'));
                 }
             }
             this.animationId = setInterval(frame, 10);

@@ -1,4 +1,4 @@
-import CardPile from "./cardPile";
+import CardPile from './cardPile';
 export interface HandOptionsInterface {
     x: number;
     y: number;

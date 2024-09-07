@@ -254,7 +254,7 @@ class Card {
     }
     setContainer(cardPile) {
         if (this.container) {
-            throw new Error("Card cannot be in two containers!");
+            throw new Error('Card cannot be in two containers!');
         }
         else {
             this.container = cardPile;
@@ -297,7 +297,7 @@ class Card {
                     }
                     else if (frameCounter > totalFrames) {
                         clearInterval(this.animationId);
-                        rej(new Error("Animation interval exceeded"));
+                        rej(new Error('Animation interval exceeded'));
                     }
                 };
                 this.animationId = setInterval(frame, 10);

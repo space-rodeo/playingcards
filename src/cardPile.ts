@@ -93,7 +93,7 @@ class CardPile {
             this.cards.splice(index, 1);
             card.removeFromContainer();
         } else {
-            throw new Error("Card not in pile");
+            throw new Error('Card not in pile');
         }
     }
 
@@ -178,10 +178,14 @@ class CardPile {
             }
         });
         if (this.cards.length !== newOrder.length) {
-            throw new Error("Ordered cards does not have enough cards");
+            throw new Error('Ordered cards does not have enough cards');
         }
         this.cards = newOrder;
         this._moveCardsSync();
+    }
+
+    getCardByName(name: string) {
+        return this.cards.find((card) => card.toString() === name);
     }
 }
 

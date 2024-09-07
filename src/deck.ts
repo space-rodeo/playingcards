@@ -1,4 +1,4 @@
-import Card, { SUIT } from "./card";
+import Card, { SUIT } from './card';
 
 export enum DECK_TYPE {
     STANDARD,

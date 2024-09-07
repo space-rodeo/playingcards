@@ -1,4 +1,4 @@
-import Card from "./card";
+import Card from './card';
 export declare enum DECK_TYPE {
     STANDARD = 0,
     EUCHRE = 1
