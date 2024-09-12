@@ -39,14 +39,16 @@ class CardPile {
             });
         });
     }
-    moveToSync(x, y) {
+    moveToSync(x, y, rotation) {
         this.x = x;
         this.y = y;
+        this.rotation = typeof rotation !== undefined ? rotation : this.rotation;
         this._moveCardsSync();
     }
-    moveTo(x, y) {
+    moveTo(x, y, rotation) {
         this.x = x;
         this.y = y;
+        this.rotation = typeof rotation !== undefined ? rotation : this.rotation;
         this._moveCards();
     }
     addCardsSync(cardArray) {

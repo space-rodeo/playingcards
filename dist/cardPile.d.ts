@@ -14,8 +14,8 @@ declare class CardPile {
     protected _getCardPosition(index: number, totalCards: number): number[];
     private _moveCardsSync;
     private _moveCards;
-    moveToSync(x: number, y: number): void;
-    moveTo(x: number, y: number): void;
+    moveToSync(x: number, y: number, rotation?: number): void;
+    moveTo(x: number, y: number, rotation?: number): void;
     addCardsSync(cardArray: Array<Card>): void;
     addCards(cardArray: Array<Card>): Promise<void>;
     private _removeCard;
