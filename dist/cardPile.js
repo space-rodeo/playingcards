@@ -42,13 +42,13 @@ class CardPile {
     moveToSync(x, y, rotation) {
         this.x = x;
         this.y = y;
-        this.rotation = typeof rotation !== undefined ? rotation : this.rotation;
+        this.rotation = rotation !== undefined ? rotation : this.rotation;
         this._moveCardsSync();
     }
     moveTo(x, y, rotation) {
         this.x = x;
         this.y = y;
-        this.rotation = typeof rotation !== undefined ? rotation : this.rotation;
+        this.rotation = rotation !== undefined ? rotation : this.rotation;
         this._moveCards();
     }
     addCardsSync(cardArray) {
