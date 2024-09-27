@@ -1,5 +1,5 @@
 # Overview
-This project is designed to make writing card games easier. It includes assets and animations.
+This project is designed to make writing card games easier. It includes assets and animations. An example game built using this library is at https://euchre.xyz/
 
 ## Example Project
 ```
