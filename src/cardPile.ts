@@ -51,11 +51,11 @@ class CardPile {
         this._moveCardsSync();
     }
 
-    moveTo(x: number, y: number, rotation?: number) {
+    async moveTo(x: number, y: number, rotation?: number) {
         this.x = x;
         this.y = y;
         this.rotation = rotation !== undefined ? rotation : this.rotation;
-        this._moveCards();
+        await this._moveCards();
     }
 
     addCardsSync(cardArray: Array<Card>) {
