@@ -15,7 +15,7 @@ declare class CardPile {
     private _moveCardsSync;
     private _moveCards;
     moveToSync(x: number, y: number, rotation?: number): void;
-    moveTo(x: number, y: number, rotation?: number): void;
+    moveTo(x: number, y: number, rotation?: number): Promise<void>;
     addCardsSync(cardArray: Array<Card>): void;
     addCards(cardArray: Array<Card>): Promise<void>;
     private _removeCard;

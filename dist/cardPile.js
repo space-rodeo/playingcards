@@ -46,10 +46,12 @@ class CardPile {
         this._moveCardsSync();
     }
     moveTo(x, y, rotation) {
-        this.x = x;
-        this.y = y;
-        this.rotation = rotation !== undefined ? rotation : this.rotation;
-        this._moveCards();
+        return __awaiter(this, void 0, void 0, function* () {
+            this.x = x;
+            this.y = y;
+            this.rotation = rotation !== undefined ? rotation : this.rotation;
+            yield this._moveCards();
+        });
     }
     addCardsSync(cardArray) {
         cardArray.forEach((card) => {
